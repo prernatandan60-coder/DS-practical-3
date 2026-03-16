@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int linearSearch(string arr[], int n, string key) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == key) {
+            return i;   // string found
+        }
+    }
+    return -1;  // string not found
+}
+
+int main() {
+    int n;
+    string key;
+
+    cout << "Enter number of strings: ";
+    cin >> n;
+
+    string arr[n];
+
+    cout << "Enter strings:\n";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Enter string to search: ";
+    cin >> key;
+
+    int result = linearSearch(arr, n, key);
+
+    if(result != -1)
+        cout << "String found at index: " << result;
+    else
+        cout << "String not found";
+
+    return 0;
+}
